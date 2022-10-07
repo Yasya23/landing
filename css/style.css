@@ -245,7 +245,13 @@ body {
 
 @media (max-width: 768px) {
   .main-block__container {
-    padding-top: 70px;
+    padding-top: 60px;
+  }
+}
+
+@media (max-width: 576px) {
+  .main-block__container {
+    padding-top: 40px;
   }
 }
 
