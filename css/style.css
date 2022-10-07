@@ -80,9 +80,6 @@ body {
   color: var(--secondary-font-color);
 }
 
-.header__menu {
-}
-
 .header__popup {
   display: none;
 }
@@ -116,11 +113,15 @@ body {
   }
 
   .header__menu {
-    display: none;
+    visibility: hidden;
+    max-height: 0;
+    overflow: hidden;
+    transition: 1s ease max-height;
   }
 
   .header__menu-flex {
-    display: flex;
+    visibility: visible;
+    max-height: 600px;
   }
 
   .header__popup {
@@ -284,6 +285,7 @@ body {
   width: 13px;
   height: 21px;
   transition: all ease-in-out 0.3s;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 .body-main-block__arrow-prev:hover,
@@ -336,6 +338,11 @@ body {
   .body-main-block__arrows {
     bottom: 100px;
     right: 10%;
+  }
+
+  .body-main-block__arrow-prev:hover,
+  .body-main-block__arrow-next:hover {
+    stroke: none;
   }
 }
 
