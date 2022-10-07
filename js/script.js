@@ -1,5 +1,4 @@
 "use strict";
-
 let offset = 0;
 
 const sliderToggle = document.querySelector(".body-main-block__arrows");
