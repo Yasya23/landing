@@ -55,6 +55,9 @@ body {
 
 .page__deals {
 }
+
+.page__featured {
+}
 /*-------------------------*/
 
 [class*="__container"] {
@@ -1016,10 +1019,89 @@ body {
 
 /*-------------------------*/
 
-/*-------------------------*/
+.featured {
+}
+.feautured__container {
+}
+.feautured__title {
+  margin-bottom: 95px;
+}
+
+.featured__body {
+}
+.featured__images {
+}
+
+.featured__content {
+}
 
 /*-------------------------*/
 
+.images-featured {
+  margin: 0 auto;
+}
+
+.images-featured__bottom {
+  width: 492px;
+  height: 364px;
+}
+
+.images-featured__bottom img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.images-featured__top {
+  margin-top: -113px;
+  margin-left: 41px;
+  width: 410px;
+  height: 278px;
+  filter: drop-shadow(0px 163px 80px rgba(0, 0, 0, 0.04))
+    drop-shadow(0px 105.648px 46.8519px rgba(0, 0, 0, 0.0303704))
+    drop-shadow(0px 62.7852px 25.4815px rgba(0, 0, 0, 0.0242963))
+    drop-shadow(0px 32.6px 13px rgba(0, 0, 0, 0.02))
+    drop-shadow(0px 13.2815px 6.51852px rgba(0, 0, 0, 0.0157037))
+    drop-shadow(0px 3.01852px 3.14815px rgba(0, 0, 0, 0.00962963))
+    drop-shadow(48px 58px 44px rgba(0, 0, 0, 0.09));
+}
+
+.images-featured__top img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 /*-------------------------*/
+
+.content-featured {
+  padding: 39px 39px 39px 82px;
+  background: #f1ffff;
+}
+
+.content-featured__title {
+  font-size: 31px;
+  line-height: 1.3;
+  color: var(--heading);
+}
+
+.content-featured__text {
+  line-height: 1.5;
+  color: #545a58;
+}
+.content-featured__options {
+}
+
+/*-------------------------*/
+
+.options-content-featured {
+}
+.options-content-featured__option {
+}
+.options-content-featured__title {
+}
+.options-content-featured__text {
+}
+.content-featured__link {
+}
 
 /*-------------------------*/
