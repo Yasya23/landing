@@ -810,6 +810,15 @@ body {
 .deals__tabs {
 }
 
+@media (max-width: 991px) {
+  .deals {
+    padding: 60px 0;
+  }
+
+  .deals__header {
+    margin-bottom: 60px;
+  }
+}
 /*-------------------------*/
 
 .header-deals {
@@ -847,6 +856,24 @@ body {
   background-color: var(--button-hover);
 }
 
+@media (max-width: 991px) {
+  .header-deals {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .header-deals__content {
+    text-align: center;
+  }
+
+  .header-deals__title {
+    margin-bottom: 30px;
+  }
+
+  .header-deals__text {
+    margin-bottom: 30px;
+  }
+}
 /*-------------------------*/
 
 .tabs-deals {
@@ -882,6 +909,25 @@ body {
   gap: 30px;
 }
 
+@media (max-width: 991px) {
+  .tabs-deals__menu {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 720px) {
+  .tab-deals__items {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .tab-deals__items {
+    gap: 30px;
+  }
+}
 /*-------------------------*/
 
 .items-tab {
@@ -896,12 +942,20 @@ body {
 
 .item-items-tab__img {
   width: 370px;
-  height: auto;
+  height: 300px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.item-items-tab__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   transition: all ease 0.2s;
 }
 
-.item-items-tab__img:hover {
-  opacity: 0.9;
+.item-items-tab__img img:hover {
+  opacity: 0.8;
 }
 
 .item-items-tab__options {
@@ -926,38 +980,46 @@ body {
 }
 
 @media (max-width: 991px) {
-  .deals {
-    padding: 60px 0;
-  }
-
-  .deals__header {
-    margin-bottom: 60px;
-  }
-
-  .header-deals {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .header-deals__content {
-    text-align: center;
-  }
-
-  .header-deals__title {
-    margin-bottom: 30px;
-  }
-
-  .header-deals__text {
-    margin-bottom: 30px;
-  }
-
-  .tabs-deals__menu {
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
-  }
-
   .item-items-tab__img {
-    max-width: 90vw;
+    width: 310px;
+    height: 240px;
   }
 }
+
+@media (max-width: 720px) {
+  .item-items-tab__img {
+    width: 245px;
+    height: 175px;
+  }
+}
+
+@media (max-width: 576px) {
+  .item-items-tab__img {
+    width: 370px;
+    height: 300px;
+  }
+}
+
+@media (max-width: 440px) {
+  .item-items-tab__img {
+    max-width: 300px;
+    max-height: 230px;
+  }
+}
+
+@media (max-width: 320px) {
+  .item-items-tab__img {
+    max-width: 270px;
+    max-height: 200px;
+  }
+}
+
+/*-------------------------*/
+
+/*-------------------------*/
+
+/*-------------------------*/
+
+/*-------------------------*/
+
+/*-------------------------*/
