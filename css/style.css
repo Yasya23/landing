@@ -61,6 +61,9 @@ body {
 
 .page__reviews {
 }
+
+.page__subcribe {
+}
 /*-------------------------*/
 
 [class*="__container"] {
@@ -1421,3 +1424,28 @@ body {
     justify-content: center;
   }
 }
+/*-------------------------*/
+.subcribe {
+}
+.subcribe__container {
+}
+.subscribe__header {
+}
+.subcribe__title {
+}
+.subcribe__subtitle {
+}
+.subscribe__form {
+}
+/*-------------------------*/
+.form-subcribe {
+}
+.form-subcribe__form {
+}
+.form-subcribe__label {
+}
+.form-subcribe__input {
+}
+.form-subcribe__button {
+}
+/*-------------------------*/
