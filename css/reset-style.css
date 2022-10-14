@@ -31,3 +31,7 @@ h6 {
   font-weight: inherit;
   font-size: inherit;
 }
+
+input:focus {
+  outline: none;
+}
