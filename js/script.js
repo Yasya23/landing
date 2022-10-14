@@ -3,7 +3,10 @@ let offset = 0;
 
 const sliderToggle = document.querySelector(".body-main-block__arrows");
 
+const propertiesMenu = document.querySelector(".deals__container");
+
 sliderToggle.addEventListener("click", changeSlider);
+propertiesMenu.addEventListener("click", changePropertyByValue);
 
 document.querySelector(".header__popup").addEventListener("click", () => {
   document.querySelector(".header__popup-icon").classList.toggle("fa-xmark");
@@ -57,4 +60,16 @@ function checkArrowColor(target) {
 
 function addArrowColor(target) {
   target.classList.add("body-main-block__arrow-color");
+}
+
+function changePropertyByValue({ target }) {
+  event.preventDefault();
+  const properties = document.querySelectorAll(".item-items-tab");
+  properties.forEach((property) => {
+    if (target.id !== property.dataset.id && target.id !== "all-property") {
+      property.classList.add("hide");
+    } else {
+      property.classList.remove("hide");
+    }
+  });
 }

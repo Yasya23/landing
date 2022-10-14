@@ -25,6 +25,10 @@ body {
   flex-direction: column;
 }
 
+.hide {
+  display: none;
+}
+
 .title {
   font-weight: 600;
   font-size: 40px;
@@ -861,7 +865,7 @@ body {
   text-decoration: underline;
 }
 
-.tabs-deals__link a:active {
+.tabs-deals__link a:focus {
   color: var(--button-color);
 }
 
