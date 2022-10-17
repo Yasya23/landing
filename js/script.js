@@ -11,12 +11,18 @@ const propertiesMenu = document.querySelector(".tabs-deals__menu");
 const allPropertyButton = document.querySelector(".header-deals__link");
 const properties = document.querySelectorAll(".item-items-tab");
 
+const headerMenu = document.querySelector(".menu__list");
+const footerMenu = document.querySelector(".menu-footer");
+
 zipCodeSearchForm.addEventListener("click", showPropertyByZipcode);
 zipCodeResetIcon.addEventListener("click", resetInputField);
 
 sliderToggle.addEventListener("click", changeSlider);
 propertiesMenu.addEventListener("click", changePropertyByValue);
 allPropertyButton.addEventListener("click", changePropertyByValue);
+
+headerMenu.addEventListener("click", scrollToSelectedSection);
+footerMenu.addEventListener("click", scrollToSelectedSection);
 
 document.querySelector(".header__popup").addEventListener("click", () => {
   document.querySelector(".header__popup-icon").classList.toggle("fa-xmark");
@@ -109,4 +115,24 @@ function resetInputField() {
   zipCode.value = "";
   zipCodeResetIcon.classList.remove("form-main-block__reset-icon-visibile");
   tootlip.classList.remove("form-main-block__tootlip-visible");
+}
+
+function scrollToSelectedSection({ target }) {
+  event.preventDefault();
+  const contactSection = document.querySelector(".footer-reviews__info");
+  switch (target.dataset.id) {
+    case "contact":
+      scrollByPage(contactSection);
+      break;
+    case "contact":
+      scrollByPage(contactSection);
+      break;
+  }
+}
+
+function scrollByPage(section) {
+  section.scrollIntoView({
+    block: "center",
+    behavior: "smooth",
+  });
 }
