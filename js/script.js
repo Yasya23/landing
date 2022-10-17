@@ -119,20 +119,29 @@ function resetInputField() {
 
 function scrollToSelectedSection({ target }) {
   event.preventDefault();
+  const homeSection = document.querySelector(".header__container");
   const contactSection = document.querySelector(".footer-reviews__info");
+  const reviewsSection = document.querySelector(".reviews__container");
+  const propertySection = document.querySelector(".deals__container");
   switch (target.dataset.id) {
-    case "contact":
-      scrollByPage(contactSection);
+    case "home":
+      scrollByPage(homeSection);
       break;
     case "contact":
       scrollByPage(contactSection);
+      break;
+    case "reviews":
+      scrollByPage(reviewsSection);
+      break;
+    case "properties":
+      scrollByPage(propertySection);
       break;
   }
 }
 
 function scrollByPage(section) {
   section.scrollIntoView({
-    block: "center",
+    block: "start",
     behavior: "smooth",
   });
 }
