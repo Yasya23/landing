@@ -483,6 +483,34 @@ body {
   letter-spacing: 0.01em;
 }
 
+.form-main-block__tootlip {
+  visibility: hidden;
+  position: absolute;
+  min-width: 100px;
+  max-width: 100%;
+  padding: 10px;
+  background-color: var(--secondary-font-color);
+  color: #ffffff;
+  text-align: center;
+  border-radius: 3px;
+  z-index: 3;
+}
+
+.form-main-block__tootlip::after {
+  content: " ";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent var(--secondary-font-color) transparent;
+}
+
+.form-main-block__tootlip-visible {
+  visibility: visible;
+}
+
 .form-main-block__input::placeholder {
   color: var(--secondary-font-color);
   opacity: 0.3;
@@ -915,11 +943,6 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: all ease 0.2s;
-}
-
-.item-items-tab__img img:hover {
-  opacity: 0.8;
 }
 
 .item-items-tab__options {
@@ -936,11 +959,6 @@ body {
   border-radius: 5px;
   font-size: 12px;
   color: white;
-  transition: all ease 0.2s;
-}
-
-.item-items-tab__option:hover {
-  background: rgba(0, 0, 0, 0.2);
 }
 
 @media (max-width: 991px) {

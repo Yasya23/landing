@@ -71,13 +71,14 @@
                 </div>
                 <form
                   class="content-main-block__form form-main-block"
-                  action=""
+                  action="#"
                 >
                   <input
                     class="form-main-block__input"
                     type="text"
                     placeholder="Enter Zipcode to search properties"
                   />
+                  <div class="form-main-block__tootlip"></div>
                   <button class="form-main-block__button" type="submit">
                     Search Now!
                   </button>
@@ -313,7 +314,7 @@
             <div class="deals__tabs tabs-deals">
               <ul class="tabs-deals__menu">
                 <li class="tabs-deals__link">
-                  <a href="" id="residential">Residential Property</a>
+                  <a href="#" id="residential">Residential Property</a>
                 </li>
                 <li class="tabs-deals__link">
                   <a href="" id="commercial">Commercial Property</a>
@@ -330,42 +331,40 @@
                   <li
                     class="items-tab__item item-items-tab"
                     data-id="residential"
+                    data-zip="122001"
                   >
                     <div class="item-items-tab__img">
-                      <a href="">
-                        <img src="img/main/page-deal/1.jpg" alt="House." />
-                      </a>
+                      <img src="img/main/page-deal/1.jpg" alt="House." />
                     </div>
                     <div class="item-items-tab__options">
-                      <a href="" class="item-items-tab__option">Featured</a>
-                      <a href="" class="item-items-tab__option">3D</a>
+                      <span class="item-items-tab__option">122001</span>
+                      <span class="item-items-tab__option">RP</span>
                     </div>
                   </li>
                   <li
                     class="items-tab__item item-items-tab"
                     data-id="commercial"
+                    data-zip="122002"
                   >
                     <div class="item-items-tab__img">
-                      <a href="">
-                        <img src="img/main/page-deal/2.jpg" alt="House." />
-                      </a>
+                      <img src="img/main/page-deal/2.jpg" alt="House." />
                     </div>
                     <div class="item-items-tab__options">
-                      <a href="" class="item-items-tab__option">Featured</a>
-                      <a href="" class="item-items-tab__option">3D</a>
+                      <span class="item-items-tab__option">122002</span>
+                      <span class="item-items-tab__option">CP</span>
                     </div>
                   </li>
                   <li
                     class="items-tab__item item-items-tab"
                     data-id="industrial"
+                    data-zip="122003"
                   >
                     <div class="item-items-tab__img">
-                      <a href="">
-                        <img src="img/main/page-deal/3.jpg" alt="House." />
-                      </a>
+                      <img src="img/main/page-deal/3.jpg" alt="House." />
                     </div>
                     <div class="item-items-tab__options">
-                      <a href="" class="item-items-tab__option">Featured</a>
+                      <span class="item-items-tab__option">122003</span>
+                      <span class="item-items-tab__option">IP</span>
                     </div>
                   </li>
                 </ul>
@@ -634,7 +633,7 @@
                 >
                 <input
                   autocomplete="off"
-                  type="text"
+                  type="email"
                   name="input"
                   class="form-subcribe__input"
                   placeholder=""
