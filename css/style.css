@@ -1080,6 +1080,9 @@ body {
 }
 
 /*-------------------------*/
+.content-featured {
+  max-width: 600px;
+}
 
 .content-featured__title {
   max-width: 378px;
@@ -1107,7 +1110,7 @@ body {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 991px) {
   .content-featured__title {
     font-size: 25px;
     max-width: 90%;
