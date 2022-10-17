@@ -1232,7 +1232,7 @@ body {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 991px) {
   .reviews__title {
     text-align: center;
     max-width: 100%;
