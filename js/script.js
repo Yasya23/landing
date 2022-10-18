@@ -4,8 +4,6 @@ let offset = 0;
 const sliderToggle = document.querySelector(".body-main-block__arrows");
 
 const zipCodeSearchForm = document.querySelector(".form-main-block");
-const zipCodeResetIcon = document.querySelector(".form-main-block__reset-icon");
-const tootlip = document.querySelector(".form-main-block__tootlip");
 
 const propertiesMenu = document.querySelector(".tabs-deals__menu");
 const allPropertyButton = document.querySelector(".header-deals__link");
@@ -94,27 +92,19 @@ function showPropertyByZipcode(event) {
   const zipCodeValue = document
     .querySelector(".form-main-block__input")
     .value.trim();
+  const tootlip = document.querySelector(".form-main-block__tootlip");
   properties.forEach((property) => {
     if (property.dataset.zip !== zipCodeValue && zipCodeValue !== "") {
       tootlip.classList.toggle("form-main-block__tootlip-visible");
       tootlip.textContent = "Zipcode does not exist";
-      zipCodeResetIcon.classList.add("form-main-block__reset-icon-visibile");
     }
     if (property.dataset.zip !== zipCodeValue) {
       property.classList.add("hide");
     } else {
       property.classList.remove("hide");
       property.scrollIntoView({ block: "center", behavior: "smooth" });
-      resetInputField();
     }
   });
-}
-
-function resetInputField() {
-  const zipCode = document.querySelector(".form-main-block__input");
-  zipCode.value = "";
-  zipCodeResetIcon.classList.remove("form-main-block__reset-icon-visibile");
-  tootlip.classList.remove("form-main-block__tootlip-visible");
 }
 
 function scrollToSelectedSection({ target }) {

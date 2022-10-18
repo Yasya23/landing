@@ -483,26 +483,6 @@ body {
   letter-spacing: 0.01em;
 }
 
-.form-main-block__reset-icon {
-  visibility: hidden;
-  position: absolute;
-  right: 2%;
-  top: 40%;
-  font-size: 20px;
-  color: var(--secondary-font-color);
-  transition: all ease 0.2s;
-  cursor: pointer;
-  opacity: 0.5;
-}
-
-.form-main-block__reset-icon:hover {
-  opacity: 1;
-}
-
-.form-main-block__reset-icon-visibile {
-  visibility: visible;
-}
-
 .form-main-block__tootlip {
   visibility: hidden;
   position: absolute;
