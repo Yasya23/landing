@@ -1043,6 +1043,14 @@ body {
   }
 }
 
+.featured__modal-window {
+  position: fixed;
+  z-index: 2;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
 @media (max-width: 768px) {
   .featured__body {
     margin: 0 -15px;
@@ -1058,6 +1066,80 @@ body {
     margin-bottom: 55px;
   }
 }
+
+/*-------------------------*/
+
+.modal-window-featured {
+  visibility: hidden;
+  width: 600px;
+  height: auto;
+  padding: 15px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  -webkit-box-shadow: 1px 1px 9px -1px #000000;
+  box-shadow: 1px 1px 7px -1px #000000;
+}
+
+.modal-window-featured__display {
+  visibility: visible;
+  animation: showBlock 0.3s linear forwards;
+}
+
+@keyframes showBlock {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.modal-window-featured__form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-window-featured__input,
+.modal-window-featured__textarea,
+.modal-window-featured__button {
+  width: 100%;
+  border: 1px solid #dadada;
+  border-radius: 5px;
+  padding: 15px 10px;
+}
+
+.modal-window-featured__textarea {
+  resize: none;
+  height: 100px;
+}
+
+.modal-window-featured__button {
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.modal-window-featured__button-send {
+  background-color: var(--button-color);
+  color: white;
+}
+
+.modal-window-featured__button-send:hover {
+  background-color: var(--button-hover);
+}
+
+.modal-window-featured__button-cancel {
+  background-color: #dadada;
+  color: black;
+}
+
+.modal-window-featured__button-cancel:hover {
+  background-color: #c7c7c7;
+  color: black;
+}
+
 /*-------------------------*/
 
 .images-featured__bottom {

@@ -36,7 +36,7 @@
                 <a href="" class="menu__link" data-id="about">About</a>
               </li>
               <li class="menu__item">
-                <a href="" class="menu__link">Service</a>
+                <a href="" class="menu__link" data-id="offers"> Offers</a>
               </li>
               <li class="menu__item">
                 <a href="" class="menu__link" data-id="properties"
@@ -435,6 +435,36 @@
                 >
               </div>
             </div>
+            <div class="featured__modal-window modal-window-featured">
+              <form action="#" class="modal-window-featured__form">
+                <input
+                  type="email"
+                  placeholder="Your Email"
+                  class="modal-window-featured__input"
+                  id="email"
+                />
+                <textarea
+                  name="message"
+                  placeholder="Write your message"
+                  class="modal-window-featured__textarea"
+                ></textarea>
+                <div class="modal-window-featured__message"></div>
+                <button
+                  type="submit"
+                  class="modal-window-featured__button modal-window-featured__button-send"
+                  id="submit-form"
+                >
+                  Send
+                </button>
+                <button
+                  type="reset"
+                  class="modal-window-featured__button modal-window-featured__button-cancel"
+                  id="cancel-form"
+                >
+                  Cancel
+                </button>
+              </form>
+            </div>
           </div>
         </section>
 
@@ -657,10 +687,10 @@
               <a href="" data-id="home">Home</a>
             </li>
             <li class="menu-footer__item">
-              <a href="">About</a>
+              <a href="" data-id="about">About</a>
             </li>
             <li class="menu-footer__item">
-              <a href="">Service</a>
+              <a href="" data-id="offers">Offers</a>
             </li>
             <li class="menu-footer__item">
               <a href="" data-id="properties">Properties</a>

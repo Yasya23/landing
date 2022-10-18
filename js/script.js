@@ -8,6 +8,9 @@ const zipCodeSearchForm = document.querySelector(".form-main-block");
 const propertiesMenu = document.querySelector(".tabs-deals__menu");
 const allPropertyButton = document.querySelector(".header-deals__link");
 const properties = document.querySelectorAll(".item-items-tab");
+const feauturedButton = document.querySelector(".content-featured__link");
+const modalWindow = document.querySelector(".modal-window-featured");
+const formModalWindow = document.querySelector(".modal-window-featured form");
 
 const headerMenu = document.querySelector(".menu__list");
 const footerMenu = document.querySelector(".menu-footer");
@@ -17,6 +20,8 @@ zipCodeSearchForm.addEventListener("click", showPropertyByZipcode);
 sliderToggle.addEventListener("click", changeSlider);
 propertiesMenu.addEventListener("click", changePropertyByValue);
 allPropertyButton.addEventListener("click", changePropertyByValue);
+feauturedButton.addEventListener("click", ShowModalWindow);
+formModalWindow.addEventListener("click", checkFormResponse);
 
 headerMenu.addEventListener("click", scrollToSelectedSection);
 footerMenu.addEventListener("click", scrollToSelectedSection);
@@ -112,18 +117,26 @@ function scrollToSelectedSection({ target }) {
   const contactSection = document.querySelector(".footer-reviews__info");
   const reviewsSection = document.querySelector(".reviews__container");
   const propertySection = document.querySelector(".deals__container");
+  const aboutSection = document.querySelector(".content-main-block__body");
+  const offersSection = document.querySelector(".feautured__title");
   switch (target.dataset.id) {
     case "home":
       scrollByPage(homeSection);
       break;
-    case "contact":
-      scrollByPage(contactSection);
+    case "about":
+      scrollByPage(aboutSection);
+      break;
+    case "offers":
+      scrollByPage(offersSection);
+      break;
+    case "properties":
+      scrollByPage(propertySection);
       break;
     case "reviews":
       scrollByPage(reviewsSection);
       break;
-    case "properties":
-      scrollByPage(propertySection);
+    case "contact":
+      scrollByPage(contactSection);
       break;
   }
 }
@@ -133,4 +146,21 @@ function scrollByPage(section) {
     block: "start",
     behavior: "smooth",
   });
+}
+
+function ShowModalWindow(event) {
+  event.preventDefault();
+  modalWindow.classList.add("modal-window-featured__display");
+}
+
+function checkFormResponse({ target }) {
+  if (target.id === "email" && target.id !== null) {
+    if (target.id === "submit-form") {
+      const message = document.querySelector(".modal-window-featured__message");
+      message.textContent = "Thank you, we will reply as soon as possible!";
+    }
+  }
+  if (target.id === "cancel-form") {
+    modalWindow.classList.remove("modal-window-featured__display");
+  }
 }
