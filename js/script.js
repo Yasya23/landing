@@ -13,7 +13,6 @@ const headerMenu = document.querySelector(".menu__list");
 const footerMenu = document.querySelector(".menu-footer");
 
 zipCodeSearchForm.addEventListener("click", showPropertyByZipcode);
-zipCodeResetIcon.addEventListener("click", resetInputField);
 
 sliderToggle.addEventListener("click", changeSlider);
 propertiesMenu.addEventListener("click", changePropertyByValue);
