@@ -110,6 +110,9 @@ body {
   .header {
     position: fixed;
     z-index: 3;
+    -webkit-box-shadow: 4px 10px 5px -11px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 4px 10px 5px -11px rgba(0, 0, 0, 0.75);
+    box-shadow: 4px 10px 5px -12px rgba(0, 0, 0, 0.75);
   }
 
   .header__container {
