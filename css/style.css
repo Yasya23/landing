@@ -1024,6 +1024,7 @@ body {
 
 @media (max-width: 1200px) {
   .feautured__container {
+    position: relative;
     padding: 60px 0;
   }
 
@@ -1044,7 +1045,7 @@ body {
 }
 
 .featured__modal-window {
-  position: fixed;
+  position: absolute;
   z-index: 2;
   left: 50%;
   top: 50%;
