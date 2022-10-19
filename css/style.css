@@ -1572,7 +1572,8 @@ body {
 
 .form-subcribe__tootlip {
   visibility: hidden;
-  left: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .form-subcribe__tootlip-visible {
