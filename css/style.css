@@ -1072,6 +1072,7 @@ body {
 .modal-window-featured {
   visibility: hidden;
   width: 600px;
+  max-width: 95%;
   height: auto;
   padding: 15px;
   background-color: #ffffff;
