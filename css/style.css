@@ -1112,6 +1112,10 @@ body {
   padding: 15px 10px;
 }
 
+.modal-window-featured__input-outline {
+  border: 2px solid #ff0000;
+}
+
 .modal-window-featured__textarea {
   resize: none;
   height: 100px;
@@ -1120,6 +1124,17 @@ body {
 .modal-window-featured__button {
   font-size: 18px;
   cursor: pointer;
+}
+
+.modal-window-featured__message {
+  width: 100%;
+  color: #ff0000;
+  font-size: 12px;
+  text-align: left;
+}
+
+.modal-window-featured__message-submit {
+  color: #ff0000;
 }
 
 .modal-window-featured__button-send {

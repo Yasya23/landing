@@ -8,9 +8,22 @@ const zipCodeSearchForm = document.querySelector(".form-main-block");
 const propertiesMenu = document.querySelector(".tabs-deals__menu");
 const allPropertyButton = document.querySelector(".header-deals__link");
 const properties = document.querySelectorAll(".item-items-tab");
+
 const feauturedButton = document.querySelector(".content-featured__link");
 const modalWindow = document.querySelector(".modal-window-featured");
 const formModalWindow = document.querySelector(".modal-window-featured form");
+const cancelModalWindowButton = document.querySelector(
+  ".modal-window-featured__button-cancel"
+);
+const messageErrorEmailModalWindow = document.querySelector(
+  ".modal-window-featured__message"
+);
+const emailModalWindow = document.querySelector(
+  ".modal-window-featured__input"
+);
+const messageSubmitModalWindow = document.querySelector(
+  ".modal-window-featured__message-submit"
+);
 
 const headerMenu = document.querySelector(".menu__list");
 const footerMenu = document.querySelector(".menu-footer");
@@ -20,8 +33,9 @@ zipCodeSearchForm.addEventListener("click", showPropertyByZipcode);
 sliderToggle.addEventListener("click", changeSlider);
 propertiesMenu.addEventListener("click", changePropertyByValue);
 allPropertyButton.addEventListener("click", changePropertyByValue);
-feauturedButton.addEventListener("click", ShowModalWindow);
-formModalWindow.addEventListener("click", checkFormResponse);
+feauturedButton.addEventListener("click", showModalWindow);
+cancelModalWindowButton.addEventListener("click", closeModalWindow);
+formModalWindow.addEventListener("submit", checkFormResponse);
 
 headerMenu.addEventListener("click", scrollToSelectedSection);
 footerMenu.addEventListener("click", scrollToSelectedSection);
@@ -148,19 +162,27 @@ function scrollByPage(section) {
   });
 }
 
-function ShowModalWindow(event) {
+function showModalWindow(event) {
   event.preventDefault();
   modalWindow.classList.add("modal-window-featured__display");
 }
 
-function checkFormResponse({ target }) {
-  if (target.id === "email" && target.id !== null) {
-    if (target.id === "submit-form") {
-      const message = document.querySelector(".modal-window-featured__message");
-      message.textContent = "Thank you, we will reply as soon as possible!";
-    }
-  }
-  if (target.id === "cancel-form") {
-    modalWindow.classList.remove("modal-window-featured__display");
+function closeModalWindow() {
+  messageErrorEmailModalWindow.textContent = "";
+  messageSubmitModalWindow.textContent = "";
+  emailModalWindow.classList.remove("modal-window-featured__input-outline");
+  modalWindow.classList.remove("modal-window-featured__display");
+}
+
+function checkFormResponse(event) {
+  event.preventDefault();
+  if (emailModalWindow.value.trim() === "") {
+    messageErrorEmailModalWindow.textContent = "The field cannot be empty";
+    emailModalWindow.classList.add("modal-window-featured__input-outline");
+  } else {
+    messageErrorEmailModalWindow.textContent = "";
+    messageSubmitModalWindow.textContent =
+      "Thank you we will contact you as soon as possible!";
+    emailModalWindow.classList.remove("modal-window-featured__input-outline");
   }
 }
