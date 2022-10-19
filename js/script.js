@@ -1,6 +1,8 @@
 "use strict";
 let offset = 0;
 
+const headerPopupMenu = document.querySelector(".header__popup");
+
 const sliderToggle = document.querySelector(".body-main-block__arrows");
 
 const zipCodeSearchForm = document.querySelector(".form-main-block");
@@ -28,6 +30,10 @@ const messageSubmitModalWindow = document.querySelector(
 const headerMenu = document.querySelector(".menu__list");
 const footerMenu = document.querySelector(".menu-footer");
 
+const tootlipSubscribeForm = document.querySelector(".form-subcribe__tootlip");
+
+const formSubscribeButton = document.querySelector(".form-subcribe");
+
 zipCodeSearchForm.addEventListener("click", showPropertyByZipcode);
 
 sliderToggle.addEventListener("click", changeSlider);
@@ -40,9 +46,25 @@ formModalWindow.addEventListener("submit", checkFormResponse);
 headerMenu.addEventListener("click", scrollToSelectedSection);
 footerMenu.addEventListener("click", scrollToSelectedSection);
 
-document.querySelector(".header__popup").addEventListener("click", () => {
+headerPopupMenu.addEventListener("click", () => {
   document.querySelector(".header__popup-icon").classList.toggle("fa-xmark");
   document.querySelector(".header__menu").classList.toggle("header__menu-flex");
+});
+
+document.addEventListener("click", () => {
+  if (
+    tootlipSubscribeForm.classList.contains("form-subcribe__tootlip-visible")
+  ) {
+    tootlipSubscribeForm.classList.remove("form-subcribe__tootlip-visible");
+  }
+});
+
+formSubscribeButton.addEventListener("submit", (event) => {
+  event.preventDefault();
+  const emailSubcribe = document.querySelector(".form-subcribe__input").value;
+  if (emailSubcribe === "") {
+    tootlipSubscribeForm.classList.add("form-subcribe__tootlip-visible");
+  }
 });
 
 function changeSlider({ target }) {

@@ -40,6 +40,29 @@ body {
   text-align: center;
 }
 
+.tootlip {
+  position: absolute;
+  min-width: 100px;
+  max-width: 100%;
+  padding: 10px;
+  background-color: var(--secondary-font-color);
+  color: #ffffff;
+  text-align: center;
+  border-radius: 3px;
+  z-index: 3;
+}
+
+.tootlip::after {
+  content: " ";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent var(--secondary-font-color) transparent;
+}
+
 @media (max-width: 576px) {
   .title {
     font-size: 30px;
@@ -488,26 +511,6 @@ body {
 
 .form-main-block__tootlip {
   visibility: hidden;
-  position: absolute;
-  min-width: 100px;
-  max-width: 100%;
-  padding: 10px;
-  background-color: var(--secondary-font-color);
-  color: #ffffff;
-  text-align: center;
-  border-radius: 3px;
-  z-index: 3;
-}
-
-.form-main-block__tootlip::after {
-  content: " ";
-  position: absolute;
-  bottom: 100%;
-  left: 50%;
-  margin-left: -5px;
-  border-width: 5px;
-  border-style: solid;
-  border-color: transparent transparent var(--secondary-font-color) transparent;
 }
 
 .form-main-block__tootlip-visible {
@@ -1565,6 +1568,15 @@ body {
 
 .form-subcribe__button:hover {
   background-color: var(--button-hover);
+}
+
+.form-subcribe__tootlip {
+  visibility: hidden;
+  left: 10%;
+}
+
+.form-subcribe__tootlip-visible {
+  visibility: visible;
 }
 
 @media (max-width: 576px) {
