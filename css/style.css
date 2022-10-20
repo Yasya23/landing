@@ -28,6 +28,7 @@ body {
 .hide {
   display: none;
 }
+/*-------------------------*/
 
 .title {
   font-weight: 600;
@@ -40,6 +41,12 @@ body {
   text-align: center;
 }
 
+@media (max-width: 576px) {
+  .title {
+    font-size: 30px;
+  }
+}
+/*-------------------------*/
 .tootlip {
   position: absolute;
   min-width: 100px;
@@ -63,11 +70,17 @@ body {
   border-color: transparent transparent var(--secondary-font-color) transparent;
 }
 
-@media (max-width: 576px) {
-  .title {
-    font-size: 30px;
-  }
+/*-------------------------*/
+
+.socialmedia-icons i {
+  font-size: 25px;
+  transition: all ease-in-out 0.3s;
 }
+
+.socialmedia-icons i:hover {
+  color: #9672ff;
+}
+
 /*-------------------------*/
 
 .page {
@@ -357,14 +370,38 @@ body {
   }
 }
 
+.body-main-block__socialmedia {
+  visibility: hidden;
+}
+
+@media (min-width: 1200px) {
+  .body-main-block__socialmedia {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    visibility: visible;
+    position: absolute;
+    right: -10%;
+    top: 50%;
+    z-index: 2;
+    font-size: 20px;
+  }
+}
+
 @media (min-width: 991px) {
   .body-main-block__arrow-prev:hover,
   .body-main-block__arrow-next:hover {
     stroke: #4f42ff;
     cursor: pointer;
   }
-}
 
+  .body-main-block__socialmedia {
+    position: absolute;
+    right: -10%;
+    top: 50%;
+    z-index: 2;
+  }
+}
 @media (max-width: 768px) {
   .body-main-block__arrows {
     bottom: 100px;
@@ -1486,7 +1523,7 @@ body {
 /*-------------------------*/
 
 .subcribe__container {
-  padding: 100px 0 160px 0;
+  padding: 100px 0 130px 0;
 }
 
 .subcribe__title {
@@ -1580,6 +1617,25 @@ body {
   visibility: visible;
 }
 
+.form-subscribe__socialmedia {
+  visibility: hidden;
+  display: flex;
+  column-gap: 40px;
+  justify-content: center;
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 1200px) {
+  .form-subscribe__socialmedia {
+    visibility: visible;
+    display: flex;
+    column-gap: 40px;
+    justify-content: center;
+    font-size: 25px;
+    margin-bottom: 20px;
+  }
+}
 @media (max-width: 576px) {
   .form-subcribe {
     display: block;
@@ -1627,6 +1683,7 @@ body {
   }
 }
 /*-------------------------*/
+
 .menu-footer {
   display: flex;
   justify-content: space-between;
