@@ -73,6 +73,7 @@ body {
 /*-------------------------*/
 
 .socialmedia-icons i {
+  color: var(--main-font-color);
   font-size: 25px;
   transition: all ease-in-out 0.3s;
 }
