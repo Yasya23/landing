@@ -789,7 +789,7 @@ body {
   display: flex;
   position: relative;
   left: 0;
-  max-width: 1810px;
+  /* max-width: 1810px; */
   -webkit-transition: all ease 1s;
   transition: all ease 1s;
 }
