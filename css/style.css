@@ -694,6 +694,7 @@ body {
   max-height: 573px;
   z-index: 1;
   overflow: hidden;
+  -moz-overflow: hidden;
 }
 
 .slider-main-block__wrapper {
