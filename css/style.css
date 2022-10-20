@@ -523,8 +523,6 @@ body {
 
 .content-main-block__form {
   margin-right: -188px;
-  direction: rtl;
-  -webkit-margin-start: -188px;
 }
 
 @media (max-width: 991px) {
@@ -638,6 +636,7 @@ body {
   width: 188px;
   height: 100%;
   top: 0;
+  float: right;
   background-color: var(--button-color);
   font-weight: 700;
   font-size: 17px;
