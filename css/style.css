@@ -523,7 +523,8 @@ body {
 
 .content-main-block__form {
   margin-right: -188px;
-  -webkit-margin-start: 0;
+  direction: rtl;
+  -webkit-margin-start: -188px;
 }
 
 @media (max-width: 991px) {
