@@ -800,7 +800,7 @@ body {
 
 .slider-main-block__wrapper img {
   width: 603px;
-  width: 100%;
+  height: auto;
   -o-object-fit: cover;
   object-fit: cover;
 }
