@@ -802,6 +802,8 @@ body {
 
 .slider-main-block__wrapper img {
   width: 100%;
+  width: 603px;
+  height: 573px;
   -o-object-fit: cover;
   object-fit: cover;
 }
