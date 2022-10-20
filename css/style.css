@@ -777,8 +777,11 @@ body {
 
 .slider-main-block {
   position: relative;
-  max-width: 603px;
-  max-height: 573px;
+
+  width: 603px;
+  height: 573px;
+  max-width: 100%;
+  max-height: auto;
   z-index: 1;
   overflow: hidden;
 }
@@ -788,7 +791,7 @@ body {
   display: -ms-flexbox;
   display: flex;
   position: relative;
-  left: 0;
+  /* left: 0; */
   /* max-width: 1810px; */
   -webkit-transition: all ease 1s;
   transition: all ease 1s;
