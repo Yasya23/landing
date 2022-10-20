@@ -422,6 +422,11 @@ body {
   }
 }
 
+.body-main-block__arrow-prev:hover,
+.body-main-block__arrow-next:hover {
+  cursor: pointer;
+}
+
 .body-main-block__socialmedia {
   visibility: hidden;
 }
@@ -449,7 +454,6 @@ body {
   .body-main-block__arrow-prev:hover,
   .body-main-block__arrow-next:hover {
     stroke: #4f42ff;
-    cursor: pointer;
   }
 
   .body-main-block__socialmedia {
@@ -777,7 +781,6 @@ body {
 
 .slider-main-block {
   position: relative;
-
   width: 603px;
   height: 573px;
   max-width: 100%;
@@ -799,7 +802,6 @@ body {
 
 .slider-main-block__wrapper img {
   width: 100%;
-  height: auto;
   -o-object-fit: cover;
   object-fit: cover;
 }
