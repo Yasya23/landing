@@ -783,7 +783,7 @@ body {
   position: relative;
   max-width: 603px;
   max-height: 573px;
-  height: auto;
+  /* height: auto; */
   z-index: 1;
   overflow: hidden;
 }
@@ -793,13 +793,15 @@ body {
   display: -ms-flexbox;
   display: flex;
   position: relative;
-  max-width: 1810px;
+  left: 0;
+  /* max-width: 1810px; */
   -webkit-transition: all ease 1s;
   transition: all ease 1s;
 }
 
 .slider-main-block__wrapper img {
   width: 603px;
+  max-width: 100%;
   height: auto;
   -o-object-fit: cover;
   object-fit: cover;
