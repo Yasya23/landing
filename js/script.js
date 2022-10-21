@@ -31,10 +31,11 @@ const headerMenu = document.querySelector(".menu__list");
 const footerMenu = document.querySelector(".menu-footer");
 
 const tootlipSubscribeForm = document.querySelector(".form-subcribe__tootlip");
+const tootlip = document.querySelector(".form-main-block__tootlip");
 
 const formSubscribeButton = document.querySelector(".form-subcribe");
 
-zipCodeSearchForm.addEventListener("click", showPropertyByZipcode);
+zipCodeSearchForm.addEventListener("submit", checkZipcode);
 
 sliderToggle.addEventListener("click", changeSlider);
 propertiesMenu.addEventListener("click", changePropertyByValue);
@@ -56,6 +57,9 @@ document.addEventListener("click", () => {
     tootlipSubscribeForm.classList.contains("form-subcribe__tootlip-visible")
   ) {
     tootlipSubscribeForm.classList.remove("form-subcribe__tootlip-visible");
+  }
+  if (tootlip.classList.contains("form-subcribe__tootlip-visible")) {
+    tootlip.classList.remove("form-subcribe__tootlip-visible");
   }
 });
 
@@ -127,21 +131,41 @@ function changePropertyByValue({ target }) {
   });
 }
 
-function showPropertyByZipcode(event) {
+function checkZipcode(event) {
   event.preventDefault();
-  const zipCodeValue = document
-    .querySelector(".form-main-block__input")
-    .value.trim();
-  const tootlip = document.querySelector(".form-main-block__tootlip");
+  const zipCode = document.querySelector(".form-main-block__input");
+  const zipCodeValue = zipCode.value.trim();
+  const zipCodesArray = [];
+  let isZipCode;
   properties.forEach((property) => {
-    if (property.dataset.zip !== zipCodeValue && zipCodeValue !== "") {
-      tootlip.classList.toggle("form-main-block__tootlip-visible");
-      tootlip.textContent = "Zipcode does not exist";
+    zipCodesArray.push(property.dataset.zip);
+    if (property.classList.contains("hide")) {
+      property.classList.remove("hide");
     }
-    if (property.dataset.zip !== zipCodeValue) {
+  });
+  zipCodesArray.forEach((zip) => {
+    if (zipCodeValue === zip) {
+      isZipCode = true;
+    }
+  });
+  if (isZipCode !== true) {
+    tootlip.classList.add("form-main-block__tootlip-visible");
+    tootlip.textContent = "Zipcode does not exist";
+  } else {
+    showPropertyByZipcode(zipCodeValue, zipCode);
+  }
+}
+
+function showPropertyByZipcode(zipCodeValue, zipCode) {
+  if (tootlip.classList.contains("form-main-block__tootlip-visible")) {
+    tootlip.classList.remove("form-main-block__tootlip-visible");
+  }
+  properties.forEach((property) => {
+    if (zipCodeValue !== property.dataset.zip) {
       property.classList.add("hide");
     } else {
       property.classList.remove("hide");
+      zipCode.value = "";
       property.scrollIntoView({ block: "center", behavior: "smooth" });
     }
   });
