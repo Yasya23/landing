@@ -5,7 +5,7 @@ const headerPopupMenu = document.querySelector(".header__popup");
 
 const sliderToggle = document.querySelector(".body-main-block__arrows");
 
-const zipCodeSearchForm = document.querySelector(".form-main-block__button");
+const zipCodeSearchForm = document.querySelector(".form-main-block");
 const formSubscribeButton = document.querySelector(".form-subcribe__input");
 
 const propertiesMenu = document.querySelector(".tabs-deals__menu");
@@ -34,6 +34,7 @@ const footerMenu = document.querySelector(".menu-footer");
 const tootlipSubscribeForm = document.querySelector(".form-subcribe__tootlip");
 
 zipCodeSearchForm.addEventListener("click", checkZipcode);
+zipCodeSearchForm.addEventListener("submit", checkZipcode);
 
 sliderToggle.addEventListener("click", changeSlider);
 propertiesMenu.addEventListener("click", changePropertyByValue);
