@@ -144,17 +144,18 @@ function checkZipcode(event) {
     }
   });
   if (isZipCode === true) {
-    zipCode.value = "";
     const propertySection = document.querySelector(".items-tab__item");
     propertySection.scrollIntoView({
       block: "start",
       behavior: "smooth",
     });
-    // showPropertyByZipcode(zipCodeValue, zipCode);
-  } else {
-    tootlip.classList.add("form-main-block__tootlip-visible");
-    tootlip.textContent = "Zipcode does not exist";
+    zipCode.value = "";
+    showPropertyByZipcode(zipCodeValue, zipCode);
   }
+  // } else {
+  //   tootlip.classList.add("form-main-block__tootlip-visible");
+  //   tootlip.textContent = "Zipcode does not exist";
+  // }
 }
 
 function showPropertyByZipcode(zipCodeValue, zipCode) {
