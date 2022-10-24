@@ -141,7 +141,8 @@ let zipCodesArray = [];
   });
 })();
 
-function checkZipcode() {
+function checkZipcode(event) {
+  event.preventDefault();
   const zipCode = document.querySelector(".form-main-block__input");
   const zipCodeValue = zipCode.value.trim();
   const tootlip = document.querySelector(".form-main-block__tootlip");
