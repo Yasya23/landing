@@ -5,7 +5,7 @@ const headerPopupMenu = document.querySelector(".header__popup");
 
 const sliderToggle = document.querySelector(".body-main-block__arrows");
 
-const zipCodeSearchForm = document.querySelector(".form-main-block__button");
+const zipCodeSearchForm = document.querySelector(".form-main-block");
 
 const propertiesMenu = document.querySelector(".tabs-deals__menu");
 const allPropertyButton = document.querySelector(".header-deals__link");
