@@ -126,7 +126,8 @@ function changePropertyByValue({ target }) {
   });
 }
 
-function checkZipcode() {
+function checkZipcode(event) {
+  event.preventDefault();
   const zipCode = document.querySelector(".form-main-block__input");
   const zipCodeValue = zipCode.value.trim();
   const zipCodesArray = [];
@@ -149,7 +150,7 @@ function checkZipcode() {
       block: "start",
       behavior: "smooth",
     });
-    showPropertyByZipcode(zipCodeValue, zipCode);
+    // showPropertyByZipcode(zipCodeValue, zipCode);
   } else {
     tootlip.classList.add("form-main-block__tootlip-visible");
     tootlip.textContent = "Zipcode does not exist";
