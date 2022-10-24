@@ -164,9 +164,9 @@ function showPropertyByZipcode(zipCodeValue, zipCode) {
     if (zipCodeValue !== property.dataset.zip) {
       property.classList.add("hide");
     } else {
+      property.scrollIntoView({ block: "center", behavior: "smooth" });
       property.classList.remove("hide");
       zipCode.value = "";
-      property.scrollIntoView({ block: "center", behavior: "smooth" });
     }
   });
 }
