@@ -146,8 +146,12 @@ function checkZipcode(event) {
     }
   });
   if (isZipCode === true) {
+    zipCode.value = "";
     const propertySection = document.querySelector(".items-tab__item");
-    scrollByPage(propertySection);
+    propertySection.scrollIntoView({
+      block: "start",
+      behavior: "smooth",
+    });
     showPropertyByZipcode(zipCodeValue, zipCode);
   } else {
     tootlip.classList.add("form-main-block__tootlip-visible");
@@ -164,7 +168,6 @@ function showPropertyByZipcode(zipCodeValue, zipCode) {
       property.classList.add("hide");
     } else {
       property.classList.remove("hide");
-      zipCode.value = "";
     }
   });
 }
