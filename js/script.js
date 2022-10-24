@@ -6,7 +6,6 @@ const headerPopupMenu = document.querySelector(".header__popup");
 const sliderToggle = document.querySelector(".body-main-block__arrows");
 
 const zipCodeSearchForm = document.querySelector(".form-main-block");
-const zipCodeSearchButton = document.querySelector(".form-main-block__button");
 
 const propertiesMenu = document.querySelector(".tabs-deals__menu");
 const allPropertyButton = document.querySelector(".header-deals__link");
@@ -34,10 +33,7 @@ const footerMenu = document.querySelector(".menu-footer");
 const tootlipSubscribeForm = document.querySelector(".form-subcribe__tootlip");
 const tootlip = document.querySelector(".form-main-block__tootlip");
 
-const formSubscribeButton = document.querySelector(".form-subcribe");
-
 zipCodeSearchForm.addEventListener("click", checkZipcode);
-zipCodeSearchButton.addEventListener("click", checkZipcode);
 
 sliderToggle.addEventListener("click", changeSlider);
 propertiesMenu.addEventListener("click", changePropertyByValue);
@@ -130,8 +126,7 @@ function changePropertyByValue({ target }) {
   });
 }
 
-function checkZipcode(event) {
-  event.preventDefault();
+function checkZipcode() {
   const zipCode = document.querySelector(".form-main-block__input");
   const zipCodeValue = zipCode.value.trim();
   const zipCodesArray = [];
