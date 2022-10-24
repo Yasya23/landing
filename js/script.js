@@ -5,7 +5,8 @@ const headerPopupMenu = document.querySelector(".header__popup");
 
 const sliderToggle = document.querySelector(".body-main-block__arrows");
 
-const zipCodeSearchForm = document.querySelector(".form-main-block");
+const zipCodeSearchForm = document.querySelector(".form-main-block__button");
+const formSubscribeButton = document.querySelector(".form-subcribe__input");
 
 const propertiesMenu = document.querySelector(".tabs-deals__menu");
 const allPropertyButton = document.querySelector(".header-deals__link");
@@ -31,7 +32,6 @@ const headerMenu = document.querySelector(".menu__list");
 const footerMenu = document.querySelector(".menu-footer");
 
 const tootlipSubscribeForm = document.querySelector(".form-subcribe__tootlip");
-const tootlip = document.querySelector(".form-main-block__tootlip");
 
 zipCodeSearchForm.addEventListener("click", checkZipcode);
 
@@ -119,56 +119,74 @@ function changePropertyByValue({ target }) {
   event.preventDefault();
   properties.forEach((property) => {
     if (target.id !== property.dataset.id && target.id !== "all-property") {
-      property.classList.add("hide");
+      hideProperty(property);
     } else {
-      property.classList.remove("hide");
+      showHideProperty(property);
     }
   });
 }
 
-function checkZipcode(event) {
-  event.preventDefault();
-  const zipCode = document.querySelector(".form-main-block__input");
-  const zipCodeValue = zipCode.value.trim();
-  const zipCodesArray = [];
-  let isZipCode;
+function showHideProperty(property) {
+  property.classList.remove("hide");
+}
+
+function hideProperty(property) {
+  property.classList.add("hide");
+}
+
+let zipCodesArray = [];
+(function () {
   properties.forEach((property) => {
     zipCodesArray.push(property.dataset.zip);
-    if (property.classList.contains("hide")) {
-      property.classList.remove("hide");
-    }
   });
+})();
+
+function checkZipcode() {
+  const zipCode = document.querySelector(".form-main-block__input");
+  const zipCodeValue = zipCode.value.trim();
+  const tootlip = document.querySelector(".form-main-block__tootlip");
+  let isZipCode;
+  properties.forEach((property) => {
+    showHideProperty(property);
+  });
+
   zipCodesArray.forEach((zip) => {
     if (zipCodeValue === zip) {
       isZipCode = true;
     }
   });
+
   if (isZipCode === true) {
-    const propertySection = document.querySelector(".items-tab__item");
-    propertySection.scrollIntoView({
-      block: "start",
-      behavior: "smooth",
-    });
-    zipCode.value = "";
-    showPropertyByZipcode(zipCodeValue, zipCode);
+    showPropertyByZipcode(zipCodeValue, zipCode, tootlip);
+  } else {
+    tootlip.classList.add("form-main-block__tootlip-visible");
+    tootlip.textContent = "Zipcode does not exist";
   }
-  // } else {
-  //   tootlip.classList.add("form-main-block__tootlip-visible");
-  //   tootlip.textContent = "Zipcode does not exist";
-  // }
 }
 
-function showPropertyByZipcode(zipCodeValue, zipCode) {
+function showPropertyByZipcode(zipCodeValue, zipCode, tootlip) {
+  console.log(1);
+  checkTootlipMainBlock(tootlip);
+
+  zipCode.value = "";
+  properties.forEach((property) => {
+    if (zipCodeValue !== property.dataset.zip) {
+      hideProperty(property);
+    } else {
+      showHideProperty(property);
+      property.scrollIntoView({
+        block: "center",
+        behavior: "smooth",
+      });
+    }
+  });
+}
+
+function checkTootlipMainBlock(tootlip) {
+  console.log(2);
   if (tootlip.classList.contains("form-main-block__tootlip-visible")) {
     tootlip.classList.remove("form-main-block__tootlip-visible");
   }
-  properties.forEach((property) => {
-    if (zipCodeValue !== property.dataset.zip) {
-      property.classList.add("hide");
-    } else {
-      property.classList.remove("hide");
-    }
-  });
 }
 
 function scrollToSelectedSection({ target }) {
