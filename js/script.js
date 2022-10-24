@@ -35,7 +35,7 @@ const tootlip = document.querySelector(".form-main-block__tootlip");
 
 const formSubscribeButton = document.querySelector(".form-subcribe");
 
-zipCodeSearchForm.addEventListener("click", checkZipcode);
+zipCodeSearchForm.addEventListener("submit", checkZipcode);
 zipCodeSearchForm.addEventListener("click", checkZipcode);
 
 sliderToggle.addEventListener("click", changeSlider);
