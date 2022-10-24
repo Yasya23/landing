@@ -35,7 +35,6 @@ const tootlip = document.querySelector(".form-main-block__tootlip");
 
 const formSubscribeButton = document.querySelector(".form-subcribe");
 
-zipCodeSearchForm.addEventListener("submit", checkZipcode);
 zipCodeSearchForm.addEventListener("click", checkZipcode);
 
 sliderToggle.addEventListener("click", changeSlider);
@@ -147,9 +146,9 @@ function checkZipcode(event) {
     }
   });
   if (isZipCode === true) {
-    showPropertyByZipcode(zipCodeValue, zipCode);
     const propertySection = document.querySelector(".items-tab__item");
-    propertySection.scrollIntoView({ block: "center", behavior: "smooth" });
+    scrollByPage(propertySection);
+    showPropertyByZipcode(zipCodeValue, zipCode);
   } else {
     tootlip.classList.add("form-main-block__tootlip-visible");
     tootlip.textContent = "Zipcode does not exist";
