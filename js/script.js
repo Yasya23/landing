@@ -158,7 +158,7 @@ function checkZipcode(event) {
 }
 
 function showPropertyByZipcode(zipCodeValue, zipCode) {
-  const propertySection = document.querySelector("items-tab__item");
+  const propertySection = document.querySelector(".items-tab__item");
   if (tootlip.classList.contains("form-main-block__tootlip-visible")) {
     tootlip.classList.remove("form-main-block__tootlip-visible");
   }
