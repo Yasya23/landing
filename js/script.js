@@ -158,6 +158,10 @@ function checkZipcode(event) {
   });
 
   if (isZipCode === true) {
+    feauturedButton.scrollIntoView({
+      block: "center",
+      behavior: "smooth",
+    });
     showPropertyByZipcode(zipCodeValue, zipCode, tootlip);
   } else {
     tootlip.classList.add("form-main-block__tootlip-visible");
@@ -175,10 +179,6 @@ function showPropertyByZipcode(zipCodeValue, zipCode, tootlip) {
       hideProperty(property);
     } else {
       showHideProperty(property);
-      property.scrollIntoView({
-        block: "center",
-        behavior: "smooth",
-      });
     }
   });
 }
