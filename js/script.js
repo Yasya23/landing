@@ -59,9 +59,6 @@ document.addEventListener("click", () => {
   ) {
     tootlipSubscribeForm.classList.remove("form-subcribe__tootlip-visible");
   }
-  if (tootlip.classList.contains("form-subcribe__tootlip-visible")) {
-    tootlip.classList.remove("form-subcribe__tootlip-visible");
-  }
 });
 
 formSubscribeButton.addEventListener("submit", (event) => {
@@ -149,13 +146,13 @@ function checkZipcode(event) {
       isZipCode = true;
     }
   });
-  if (isZipCode !== true) {
-    tootlip.classList.add("form-main-block__tootlip-visible");
-    tootlip.textContent = "Zipcode does not exist";
-  } else {
+  if (isZipCode === true) {
     showPropertyByZipcode(zipCodeValue, zipCode);
     const propertySection = document.querySelector(".items-tab__item");
     propertySection.scrollIntoView({ block: "center", behavior: "smooth" });
+  } else {
+    tootlip.classList.add("form-main-block__tootlip-visible");
+    tootlip.textContent = "Zipcode does not exist";
   }
 }
 
