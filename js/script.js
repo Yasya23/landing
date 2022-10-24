@@ -158,6 +158,7 @@ function checkZipcode(event) {
 }
 
 function showPropertyByZipcode(zipCodeValue, zipCode) {
+  const propertySection = document.querySelector("items-tab__item");
   if (tootlip.classList.contains("form-main-block__tootlip-visible")) {
     tootlip.classList.remove("form-main-block__tootlip-visible");
   }
@@ -165,7 +166,7 @@ function showPropertyByZipcode(zipCodeValue, zipCode) {
     if (zipCodeValue !== property.dataset.zip) {
       property.classList.add("hide");
     } else {
-      property.scrollIntoView({ block: "center", behavior: "smooth" });
+      propertySection.scrollIntoView({ block: "center", behavior: "smooth" });
       property.classList.remove("hide");
       zipCode.value = "";
     }
