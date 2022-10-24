@@ -36,6 +36,7 @@ const tootlip = document.querySelector(".form-main-block__tootlip");
 const formSubscribeButton = document.querySelector(".form-subcribe");
 
 zipCodeSearchForm.addEventListener("click", checkZipcode);
+zipCodeSearchForm.addEventListener("click", checkZipcode);
 
 sliderToggle.addEventListener("click", changeSlider);
 propertiesMenu.addEventListener("click", changePropertyByValue);
@@ -131,7 +132,8 @@ function changePropertyByValue({ target }) {
   });
 }
 
-function checkZipcode() {
+function checkZipcode(event) {
+  event.preventDefault();
   const zipCode = document.querySelector(".form-main-block__input");
   const zipCodeValue = zipCode.value.trim();
   const zipCodesArray = [];
