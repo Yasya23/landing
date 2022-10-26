@@ -35,12 +35,21 @@ const footerMenu = document.querySelector(".menu-footer");
 
 const tootlipSubscribeForm = document.querySelector(".form-subcribe__tootlip");
 
+let zipCodesArray = [];
+(function () {
+  properties.forEach((property) => {
+    zipCodesArray.push(property.dataset.zip);
+  });
+})();
+
 zipCodeSearchForm.addEventListener("submit", checkZipcode);
 zipCodeSearchButton.addEventListener("touchstart", checkZipcode);
 
 sliderToggle.addEventListener("click", changeSlider);
+
 propertiesMenu.addEventListener("click", changePropertyByValue);
 allPropertyButton.addEventListener("click", changePropertyByValue);
+
 feauturedButton.addEventListener("click", showModalWindow);
 cancelModalWindowButton.addEventListener("click", closeModalWindow);
 formModalWindow.addEventListener("submit", checkFormResponse);
@@ -102,15 +111,17 @@ function checkArrowColor(target) {
   );
 
   if (target.id === "next-slide") {
-    if (prevSliderToggle.classList.contains("body-main-block__arrow-color")) {
-      prevSliderToggle.classList.remove("body-main-block__arrow-color");
-    }
+    removeArrowColor(prevSliderToggle);
   }
 
   if (target.id === "previous-slide") {
-    if (nextSliderToggle.classList.contains("body-main-block__arrow-color")) {
-      nextSliderToggle.classList.remove("body-main-block__arrow-color");
-    }
+    removeArrowColor(nextSliderToggle);
+  }
+}
+
+function removeArrowColor(arrow) {
+  if (arrow.classList.contains("body-main-block__arrow-color")) {
+    arrow.classList.remove("body-main-block__arrow-color");
   }
 }
 
@@ -120,12 +131,11 @@ function addArrowColor(target) {
 
 function changePropertyByValue({ target }) {
   event.preventDefault();
+
   properties.forEach((property) => {
-    if (target.id !== property.dataset.id && target.id !== "all-property") {
-      hideProperty(property);
-    } else {
-      showHideProperty(property);
-    }
+    const condition =
+      target.id !== property.dataset.id && target.id !== "all-property";
+    condition ? hideProperty(property) : showHideProperty(property);
   });
 }
 
@@ -136,13 +146,6 @@ function showHideProperty(property) {
 function hideProperty(property) {
   property.classList.add("hide");
 }
-
-let zipCodesArray = [];
-(function () {
-  properties.forEach((property) => {
-    zipCodesArray.push(property.dataset.zip);
-  });
-})();
 
 function checkZipcode(event) {
   event.preventDefault();
@@ -169,25 +172,19 @@ function checkZipcode(event) {
 }
 
 function showPropertyByZipcode(zipCodeValue, zipCode, tootlip) {
-  console.log(1);
   checkTootlipMainBlock(tootlip);
-
   zipCode.value = "";
   properties.forEach((property) => {
     if (zipCodeValue !== property.dataset.zip) {
       hideProperty(property);
     } else {
       showHideProperty(property);
-      property.scrollIntoView({
-        block: "center",
-        behavior: "smooth",
-      });
+      scrollByPage(property);
     }
   });
 }
 
 function checkTootlipMainBlock(tootlip) {
-  console.log(2);
   if (tootlip.classList.contains("form-main-block__tootlip-visible")) {
     tootlip.classList.remove("form-main-block__tootlip-visible");
   }
