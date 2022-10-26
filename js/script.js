@@ -179,7 +179,7 @@ function showPropertyByZipcode(zipCodeValue, zipCode, tootlip) {
       hideProperty(property);
     } else {
       showHideProperty(property);
-      scrollByPage(property);
+      scrollByPage(propertiesMenu);
     }
   });
 }
