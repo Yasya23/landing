@@ -7,21 +7,10 @@
   --subtitle-color: #ff9900;
 }
 
-html,
-body {
-  height: 100%;
-}
-
 body {
   line-height: 1;
   font-family: Manrope;
   color: var(--main-font-color);
-}
-
-.wrapper {
-  min-height: 100%;
-  overflow: hidden;
-  flex-direction: column;
 }
 
 .hide {
@@ -580,6 +569,7 @@ body {
   .form-main-block {
     width: 128%;
   }
+
   .form-main-block__button {
     width: 150px;
   }
@@ -600,6 +590,7 @@ body {
   .form-main-block {
     width: 100%;
   }
+
   .form-main-block__input {
     background-position: 10px;
     padding-left: 44px;
